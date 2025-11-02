@@ -37,18 +37,12 @@ Test Coverage:
 
 **Requirements:** Java 23 (JDK 23)
 
-1. clone and navigate
-```bash
-git clone 
-cd thermostat-control
-```
-
-2. compile
+1. compile
 ```bash
 javac -d bin src/**/*.java
 ```
 
-3. run
+2. run
 ```bash
 java -cp bin ThermostatApp
 ```
