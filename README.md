@@ -1,14 +1,14 @@
 A Java Swing application demonstrating **MVC architecture**, **interface-based design**,  and **testing practices**.
 
-1. Architecture & Design
-  - **MVC architecture**
-  - **Interface-based design**
-  - **Input validation and error handling**
-  - Best Practices: **SOLID principles**, **clean code**
-2. Test Coverage:
-  - **Model tests** - temperature bounds, heating/cooling logic, state transitions
-  - **Controller tests** - uses mocks to verify view/model interactions in isolation
+Architecture & Design
+- **MVC architecture**
+- **Interface-based design**
+- **Input validation and error handling**
+- **SOLID principles**
 
+Test Coverage:
+- **Model tests** - temperature bounds, heating/cooling logic, state transitions
+- **Controller tests** - uses mocks to verify view/model interactions in isolation
 
 <table align="center">
   <tr>
