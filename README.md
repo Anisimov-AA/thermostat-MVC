@@ -1,5 +1,15 @@
 A Java Swing application demonstrating **MVC architecture**, **interface-based design**,  and **testing practices**.
 
+Architecture & Design
+- **MVC architecture**
+- **Interface-based design**
+- **Input validation and error handling**
+- **SOLID principles**
+
+Test Coverage:
+- **Model tests** - temperature bounds, heating/cooling logic, state transitions
+- **Controller tests** - uses mocks to verify view/model interactions in isolation
+
 <table align="center">
   <tr>
     <td align="center" style="padding: 10px;">
@@ -23,32 +33,22 @@ A Java Swing application demonstrating **MVC architecture**, **interface-based d
   </tr>
 </table>
 
-Architecture & Design
-- **MVC architecture**
-- **Interface-based design**
-- **Input validation and error handling**
-- **SOLID principles**
-
-Test Coverage:
-- **Model tests** - temperature bounds, heating/cooling logic, state transitions
-- **Controller tests** - uses mocks to verify view/model interactions in isolation
-
 ## Setup
 
 **Requirements:** Java 23 (JDK 23)
 
-1. Clone and navigate
+1. clone and navigate
 ```bash
 git clone 
 cd thermostat-control
 ```
 
-2. Compile
+2. compile
 ```bash
 javac -d bin src/**/*.java
 ```
 
-3. Run
+3. run
 ```bash
 java -cp bin ThermostatApp
 ```
