@@ -1,17 +1,14 @@
-# Thermostat Control System
+A Java Swing application demonstrating **MVC architecture**, **interface-based design**,  and **testing practices**.
 
-A Java Swing application demonstrating clean MVC architecture with comprehensive unit testing and professional software engineering practices.
+1. Architecture & Design
+  - **MVC architecture**
+  - **Interface-based design**
+  - **Input validation and error handling**
+  - Best Practices: **SOLID principles**, **clean code**
+2. Test Coverage:
+  - **Model tests** - temperature bounds, heating/cooling logic, state transitions
+  - **Controller tests** - uses mocks to verify view/model interactions in isolation
 
-**Architecture & Design**
-
-- Clean **MVC architecture**
-- **Interface-based design**
-- **Input validation and error handling**
-- Best Practices: **SOLID principles**, **clean code**
-
-**Testing Strategy**
-- Comprehensive **unit testing** (model)
-- **Mock testing** (controller)
 
 <table align="center">
   <tr>
@@ -36,65 +33,52 @@ A Java Swing application demonstrating clean MVC architecture with comprehensive
   </tr>
 </table>
 
-## 🎮 How to Use
-Temperature Control
+## Setup
 
-- Launch: Run ThermostatApp.java
-- Set target: Enter temperature (10°C - 35°C) and click "Set Temperature"
-- Monitor: Watch HEAT/COOL indicators and status display
-- System automatically maintains target temperature
+**Requirements:** Java 23 (JDK 23)
 
-**Input Examples**
-
-- Valid: 20, 20.5, 20,5 (European format)  
-- Invalid: abc, 50, 20.55 (not in 0.1°C increments)  
-
-## 🚀 Features
-
-- **Temperature Control**: Set target temperature with 0.1°C precision
-- **Automatic Climate Control**: Heating/cooling activates based on current vs target temperature
-- **Visual Indicators**: Real-time status display for heating/cooling states
-- **Input Validation**: 
-  - Temperature bounds checking (10°C - 35°C)
-  - Decimal precision validation (0.1°C increments)
-  - Number format validation
-- **Internationalization**: Accepts both comma and period as decimal separators
-- **User Feedback**: Clear success/error messages with auto-dismiss
-
-## 🏗️ Architecture
-
-The application follows the MVC pattern with clear separation of concerns:  
-
+1. Clone and navigate
 ```bash
-src/  
-├── model/  
-│   ├── IThermostatModel.java      # Model interface  
-│   └── ThermostatModel.java       # Business logic implementation  
-├── view/  
-│   ├── IThermostatView.java       # View interface  
-│   └── SwingThermostatView.java   # Swing GUI implementation  
-├── controller/  
-│   ├── IThermostatController.java # Controller interface  
-│   └── ThermostatController.java  # Controller implementation  
-└── ThermostatApp.java             # Application entry point  
-test/  
-├── model/  
-│   └── ThermostatModelTest.java   # Model unit tests  
-└── controller/  
-└── ThermostatControllerTest.java  # Controller tests with mocks  
+git clone 
+cd thermostat-control
 ```
 
-## 🛠️ Technologies
+2. Compile
+```bash
+javac -d bin src/**/*.java
+```
 
-- **Java 23** (JDK 23)
-- **Swing** - GUI framework
-- **JUnit 5** - Testing framework
-  
-## 🔮 Future Enhancements
+3. Run
+```bash
+java -cp bin ThermostatApp
+```
 
-Features:
-- Add temperature history graph
-- Save/load temperature settings
-- Add scheduling (different temps at different times)
-- Add temperature units toggle (°C/°F)
-- Energy Usage Tracking (monitor and display energy consumption statistics)
+## Usage
+
+**Basic Operation:**
+1. Launch app → displays current temp (20°C default)
+2. Enter target temp (10-35°C, 0.1° precision)
+3. Click "Set Temperature"
+4. System automatically heats/cools to target
+
+**Valid Inputs:** `20`, `20.5`, `20,5` (European format)  
+**Invalid:** `abc`, `50`, `20.55` (not in 0.1°C steps)
+
+## Architecture
+```
+src/
+├── model/
+│   ├── IThermostatModel.java      # model contract
+│   └── ThermostatModel.java       # business logic
+├── view/
+│   ├── IThermostatView.java       # view contract  
+│   └── SwingThermostatView.java   # Swing GUI
+├── controller/
+│   ├── IThermostatController.java # controller contract
+│   └── ThermostatController.java  # mediates view ↔ model
+└── ThermostatApp.java             # entry point
+
+test/
+├── model/ThermostatModelTest.java      # unit tests
+└── controller/ThermostatControllerTest.java  # mock tests
+```
